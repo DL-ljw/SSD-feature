@@ -1,5 +1,5 @@
 # SSD-feature
-this is the code of our ICPR2028 paper"Feature reusing and semantic aggregation for single stage object detctor".
+This is the code of our ICPR2028 paper"Feature reusing and semantic aggregation for single stage object detctor".
 This idea is very easy to implement.
 It is extremly easy to re-produce.
 You just need to replace the ssd_pascal.py( https://github.com/weiliu89/caffe/tree/ssd) with ours.
