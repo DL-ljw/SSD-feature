@@ -150,19 +150,7 @@ def AddExtraLayers(net, use_batchnorm=True, lr_mult=1):
     net.eltwisesum5 = L.Eltwise(net['conv4_3'], net['conv1_1_3rd'], operation=P.Eltwise.SUM)
 
     return net
-'''在用FCN作语义分割的paper code(caffe 实现)中:
-n.upscore = L.Deconvolution(n.score_fr,
-        convolution_param=dict(num_output=21, kernel_size=64, stride=32,
-            bias_term=False),
-        param=[dict(lr_mult=0)])
-n.score = crop(n.upscore, n.data)
-也就是说, 它是一次性将feature map放大32倍, 然后crop到与输入一样大小. 它为什么能这样做呢?
-因为它的第一层conv pad = 100:
-n.conv1_1, n.relu1_1 = conv_relu(n.data, 64, pad=100)
-这样一来, crop掉的数据都是在padding 0上计算来的.'''
-''' M = add_layer_to_net_spec(ns, L.Eltwise, prefix+'lstm/Mx+Mh', Mx, Mh,
-                          eltwise_param={'operation':P.Eltwise.SUM})'''
-''' L.Eltwise(vec, denom, operation=P.Eltwise.PROD)'''
+
 
 
 ### Modify the following parameters accordingly ###
